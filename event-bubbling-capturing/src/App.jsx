@@ -1,35 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from "react";
+import "./styles.css";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  useEffect(() => {
+    const grandParent = document.querySelector("#grandParent");
+    if (grandParent) {
+      grandParent.addEventListener(
+        "click",
+        () => {
+          console.log("clicked grand parent");
+        },
+        false
+      );
+    }
+
+    const parent = document.querySelector("#parent");
+    if (parent) {
+      parent.addEventListener(
+        "click",
+        (e) => {
+          console.log("clicked parent");
+          e.stopPropagation();
+        },
+        false
+      );
+    }
+    const child = document.querySelector("#child");
+    if (child) {
+      child.addEventListener(
+        "click",
+        () => {
+          console.log("clicked child");
+        },
+        false
+      );
+    }
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      if (grandParent) {
+        grandParent.removeEventListener("click", () => {
+          console.log("unmount grand parent");
+        });
+      }
+      if (parent) {
+        parent.removeEventListener("click", () => {
+          console.log("unmount parent");
+        });
+      }
+      if (child) {
+        child.removeEventListener("click", () => {
+          console.log("unmount child");
+        });
+      }
+    };
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1>Event bubbling and capturing</h1>
+      <div id="grandParent">
+        grand parent
+        <div id="parent">
+          parent
+          <div id="child">child</div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
-
-export default App
