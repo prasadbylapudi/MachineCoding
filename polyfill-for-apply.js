@@ -21,7 +21,7 @@ let name2={
 // const output = printName.apply(name2, ["Andhra Pradesh", "vizag"]);
 
 
-Function.prototype.myApply = function (obj,...args) {
+Function.prototype.myApply = function (obj,args) {  
     if(typeof this !== "function"){
         throw new Error("not acceptable")
     }
@@ -30,6 +30,7 @@ Function.prototype.myApply = function (obj,...args) {
     }
     obj.fn = this;
     obj.fn(...args);
+    delete obj.fn;  //delete the function from obj
 }
 
 printName.myApply(name2,["Jammu Kashmir","srinagar"])
