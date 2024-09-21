@@ -1,10 +1,10 @@
 # Javascript and React Machine Coding Questions
 
 1. [x] Accordion
-2. [x ] Carousel
-3. [x ] Debounce
-4. [ x] Event bubbling and capturing
-5. [ x] Reddit comment section -
+2. [x] Carousel
+3. [x] Debounce
+4. [x] Event bubbling and capturing
+5. [x] Reddit comment section -
 6. [ ] Infinite scroll
 7. [ ] Pagination
 8. [ ] Modal
