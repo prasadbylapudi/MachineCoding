@@ -119,3 +119,21 @@ React Hooks: Rewrite class-based React components into functional components usi
 Context API: Use React's Context API to manage and share state or data across multiple components.
 
 React Router: Set up routing in a React application using React Router, with multiple routes and navigation.
+
+https://javascript.info/server-sent-events
+
+https://javascript.info/websocket#chat-example
+
+https://javascript.info/long-polling
+
+https://bigfrontend.dev/design
+
+https://reactbyexample.github.io/getting-started/
+
+https://reactpatterns.com/
+
+https://blog.logrocket.com/optimizing-performance-react-app/
+
+https://blog.logrocket.com/virtual-dom-react/
+
+https://devhints.io/react
