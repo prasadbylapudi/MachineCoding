@@ -12,7 +12,9 @@ const handler={
     set(target,prop,value){
         console.log("set:",prop,value)
         // console.log("target:",target)
-        target[prop]=value;
+        // target[prop]=value;
+        //dont' have to use the above process, u can use reflect.set
+         Reflect.set(target, prop, value);
         console.log("target:",target)
 
     }
