@@ -53,7 +53,7 @@ function Comment({ comment, addReply }) {
               }}
             />
             <br />
-            <button>save</button>
+            <button onClick={() => handleReplySave(comment.id)}>save</button>
             <button onClick={handleCancel}>cancel</button>
           </div>
         ) : null}
