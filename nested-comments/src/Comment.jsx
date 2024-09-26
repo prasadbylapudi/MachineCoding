@@ -6,18 +6,18 @@ function Comment({ comment, addReply }) {
 
   const inputRef = useRef(null);
 
-  const handleReply = (e) => {
+  const handleReplyBtn = (e) => {
     setShowReplyBox(true);
     setTimeout(() => {
       inputRef.current.focus();
     }, 200);
-    setReplyText(e.target.value);
   };
 
   const handleReplySave = (commentId) => {
     console.log("comment Id :", commentId, replyText);
     addReply(commentId, replyText);
     // setShowReplyBox(false);
+    setReplyText("");
   };
 
   const handleCancel = () => {
@@ -25,15 +25,19 @@ function Comment({ comment, addReply }) {
     setReplyText("");
   };
 
+  const handleKeyDown = (e, commentId) => {
+    console.log(e.key);
+    if (e.key === "Enter") {
+      handleReplySave(commentId);
+    }
+  };
+
   return (
     <div className="comment">
-      <li style={{ padding: "10px" }} key={comment.id}>
+      <li style={{ padding: "10px", marginLeft: "5px" }} key={comment.id}>
         {comment.text}
         {!showReplyBox && (
-          <button
-            className="reply-button"
-            onClick={() => setShowReplyBox(true)}
-          >
+          <button className="reply-button" onClick={handleReplyBtn}>
             Reply
           </button>
         )}
@@ -42,11 +46,14 @@ function Comment({ comment, addReply }) {
             <input
               type="text"
               value={replyText}
-              onChange={handleReply}
+              onChange={(e) => setReplyText(e.target.value)}
               ref={inputRef}
+              onKeyDown={(e) => {
+                handleKeyDown(e, comment.id);
+              }}
             />
             <br />
-            <button onClick={handleReplySave(comment.id)}>save</button>
+            <button>save</button>
             <button onClick={handleCancel}>cancel</button>
           </div>
         ) : null}

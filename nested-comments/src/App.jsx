@@ -53,23 +53,24 @@ function App() {
     }
   };
 
-  const handleReply = (commentId, replyText) => {
+  const handleReply = (parentID, replyText) => {
     //find the equivalent id in the comments and push the replyText into the replies array,
     //then update the comments array
-    console.log(commentId, replyText);
+    console.log(parentID, replyText);
     const copyComments = [...comments];
-    addReply(copyComments, commentId, replyText);
+    addReply(copyComments, parentID, replyText);
   };
 
-  const addReply = (copyComments, commentId, replyText) => {
-    console.log("inside add reply");
+  const addReply = (copyComments, parentID, replyText) => {
     for (let i = 0; i < copyComments.length; i++) {
       let comment = copyComments[i];
       console.log(comment);
-      if (comment.id === commentId) {
+      if (comment.id === parentID) {
         console.log("found your comment", comment.id);
         comment.replies.unshift(newComment(replyText));
       }
+      let commentReplies = comment.replies;
+      addReply(commentReplies, parentID, replyText);
     }
   };
 
