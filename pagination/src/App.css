@@ -1,0 +1,62 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+pages-container >span{
+    padding:5px;
+    border: 2px solid black;
+}
+.pages{
+    padding:5px;
+    border: 2px solid black;
+    margin:5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.btn{
+    padding:5px;
+    border: 2px solid black;    
+    margin:5px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10%;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+}
+
+.data-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.data-item{
+  /* card type */
+  background-color: rgb(59, 184, 166);
+  border: 2px solid black;
+  padding: 30px;
+  width: 300px;
+  height: auto;
+  margin: 10px;
+  border-radius: 3%;
+}
+
+.pages.active {
+  font-weight: bold;
+  color: rgb(29, 225, 15);
+  background-color: rgb(200, 32, 172);
+}
