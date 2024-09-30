@@ -1,0 +1,43 @@
+
+.App{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.board{
+  display: grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(3,1fr);
+  background-color: rgb(59, 184, 166);
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.box{
+  width:100px;
+  height:100px;
+  cursor: pointer;
+  border:1px solid black;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+.box:hover{
+  background-color: rgb(210, 201, 201);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  
+}
+
+.x-player-occupied{
+  background-color: rgb(162, 199, 118);
+}
+.o-player-occupied{
+  background-color: rgb(97, 127, 207);
+}
