@@ -14,7 +14,13 @@ const Result = ({ userAnswers, questions, resetQuiz = () => {} }) => {
             >
               Q {i + 1}.{question.question}
             </h4>
-            <h2></h2>
+            {/* display correct answers here */}
+            <h5>
+              Correct Answer:{" "}
+              {question.options
+                .filter((option) => option.isCorrect)
+                .map((option) => option.option)}
+            </h5>
           </div>
         );
       })}

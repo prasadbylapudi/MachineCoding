@@ -26,7 +26,7 @@ export const questions = [
             {"option": "java", "isCorrect": false}
         ]
     },
-    {
+    {   
         "question": "What was the first high-level programming language?",
         "options": [
             {"option": "FORTRAN", "isCorrect": true},

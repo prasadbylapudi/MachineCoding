@@ -27,7 +27,9 @@ function App() {
   return (
     <div className="App">
       <h1>Quiz App</h1>
-      <button onClick={handleNextQuestion}>Next Question</button>
+      {currentQuestion < questions.length && (
+        <button onClick={handleNextQuestion}>Next Question</button>
+      )}
       <button onClick={resetQuiz}>Reset Quiz</button>
       {currentQuestion < questions.length && (
         <Question
