@@ -1,0 +1,57 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.transfer-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  margin: 10px;
+  
+}
+
+
+.left-items{
+  border: 1px solid black;
+  width: 45%;
+  padding: 10px;
+}
+
+.right-items{
+  border: 1px solid black;
+  width: 45%;
+  padding: 10px; 
+}
+
+.transfer-button{
+  width: 10%;
+  margin:20px;
+  padding: 20px;
+  display: flex;
+  flex-direction:column;
+  
+}
+.item{
+  height: 30px;
+  background-color: lightblue;
+  margin: 10px  0px;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.checked{
+  background-color: green;
+  
+}
