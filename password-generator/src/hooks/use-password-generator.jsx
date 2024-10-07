@@ -8,7 +8,9 @@ const usePasswordGenerator = () => {
     let generatedPassword = "";
     let charSet = "";
 
-    const selectedOption = checkboxData.filter((checkbox) => checkbox.state);
+    const selectedOption = checkboxData.filter((checkbox) => checkbox.checked);
+
+    console.log("selectedOption", selectedOption);
 
     if (selectedOption.length === 0) {
       setErrorMessage("Select at least one option.");

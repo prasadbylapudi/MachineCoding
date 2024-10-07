@@ -22,14 +22,37 @@ function App() {
     console.log(newCheckBoxData);
   };
 
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+    console.log("copied to clipboard", text);
+  };
+
   const { password, errorMessage, generatePassword } = usePasswordGenerator();
 
   return (
     <>
       <div>
-        <h2>Password Generator</h2>
+        <h2>Password Generator & content is editable</h2>
 
         <div className="range-input">
+          <div>
+            <button
+              style={{
+                width: "70px",
+                backgroundColor: "lightblue",
+                textAlign: "center",
+              }}
+              onClick={() => copyToClipboard(password)}
+            >
+              Copy
+            </button>
+          </div>
+          <h1>
+            Your Generated Password is :{" "}
+            <span id="password" contentEditable="true">
+              {password}
+            </span>
+          </h1>
           <span>
             <label htmlFor="length">Length</label>
             <label>{length}</label>
