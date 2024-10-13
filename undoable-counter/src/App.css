@@ -1,0 +1,35 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.undoable-counter {
+  padding: 20px;
+}
+
+.undo button{
+  font-size: 3rem;
+  margin:5px;
+  padding:5px;
+  border:1px solid black;
+  background-color: rgb(102, 228, 109);
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.undoable-counter button {
+  font-size: 3rem;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: rgb(102, 228, 109);
+  color: white;
+  cursor: pointer;
+}
+
+.history{
+  max-height: 400px;
+  overflow-y: scroll;
+}
