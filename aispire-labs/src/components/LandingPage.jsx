@@ -17,7 +17,7 @@ const LandingPage = () => {
             &nbsp;&rarr;&nbsp;
             <span>Smart AI Assistants</span>
           </p>
-          <p className="text-lg text-black-600 mt-3">
+          <p className="text-lg text-black-600 mt-3 font-semibold">
             we excite, engage and elevate your customer experience
           </p>
         </div>
