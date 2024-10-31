@@ -5,6 +5,7 @@ function App() {
   const [dices, setDices] = useState(1);
   const [rolls, setRolls] = useState(Array(dices).fill(null));
   const [isRolled, setIsRolled] = useState(false);
+  const [history, setHistory] = useState([]);
   console.log(dices);
   const handleRoll = (e) => {
     e.preventDefault();
@@ -12,6 +13,12 @@ function App() {
       { length: dices },
       () => Math.floor(Math.random() * 6) + 1
     );
+    // setHistory([...history, randomValues]);
+    setHistory((prevHistory) => {
+      const newHistory = [...prevHistory, randomValues];
+      return newHistory.slice(-10);
+    });
+
     setRolls(randomValues);
     setIsRolled(true);
     console.log(randomValues);
@@ -40,6 +47,29 @@ function App() {
           rolls.map((val, index) => {
             return <Dice val={val} key={index} />;
           })}
+      </div>
+
+      <div className="dice-history">
+        <h2>History</h2>
+        <ul>
+          {history.map((val, index) => {
+            return (
+              <li
+                key={index}
+                className=""
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  border: "2px solid black",
+                }}
+              >
+                {val.map((item, index) => {
+                  return <Dice val={item} key={index} />;
+                })}
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </>
   );
